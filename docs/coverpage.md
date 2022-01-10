@@ -1,9 +1,9 @@
 # 
 
 <h1 id="cover-heading">
-  BUILD Lab Guide
+  FlightSchool Lab Guide
 </h1>
 
 
 [Explore](home)
-[GitHub](https://github.com/fkhademi/test-docs)
+[GitHub](https://github.com/fkhademi/flightschool-docs)

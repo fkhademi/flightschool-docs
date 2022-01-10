@@ -24,4 +24,4 @@
 - [Summary](summary.md)
 
 **PROJECT INFO**  
-* [GitHub Repository](https://github.com/fkhademi/test-docs)  
+* [GitHub Repository](https://github.com/fkhademi/flightschool-docs)  
