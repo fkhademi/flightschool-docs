@@ -1,4 +1,6 @@
 ![Lab Overview](../images/flightschool.png) <!-- .element height="50%" width="50%" -->
 
-This document will guide you through the different labs that are part of the Aviatrix Build Workshop.  Upon successful completion of the lab, you will receive a voucher for an [ACE Associates Certification Exam](https://aviatrix.com/ace)
-worth $1079.
+## Welcome to Aviatrix FlightSchool!  
+
+This Lab Guide will guide you through the different parts of Aviatrix FlightSchool.
+
