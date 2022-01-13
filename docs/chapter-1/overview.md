@@ -1,11 +1,9 @@
-# Chapter 1
+# Lab 1
 
-## Lab Overview
+## Lab Overview - What's in the lab?
+Lab time: ~20 minutes
 
-You have been tasked with building connectivity and security for an application in the cloud.  It just so happens that the different tiers of the application are spread out across different VPCs and VNETs in Azure and AWS.
-
-The application components are already deployed in each of the VPCs/VNETs, all you have to do is build out the connectivity. The app is only available via private IP address, which you can access using a web-based RDP client, which is available on-prem.
-
+In this lab, we are going to explore our lab environment. The diagram below shows the current state of the lab environment. You will extend this environment during the exercises. The instructor will briefly explain the lab setup in the diagram. You can find a more complete and detailed diagram here.
 
 ![Lab Overview](../images/lab-before.png)  
 _Figure 1: Lab Overview_
