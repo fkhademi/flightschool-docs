@@ -12,17 +12,10 @@ _Figure 1: Lab Overview_
 
 First, we are going to log into the controller. To do so, set up a connection with your browser by browsing to:
 
-| Option | Description |
+|  |  |
 | ------ | ----------- |
 | Description | Log into the Aviatrix Controller |
-| Validate    | Navigate and login to the Aviatrix Controller:
-
-URL:  https://ctrl.pod(#).aviatrixlab.com
-(For example:  if you have been assigned pod12, your access URL will be https://ctrl.pod12.aviatrixlab.com)
-
-Username:  admin
-Password:  Password123! 
-|
+| Validate    | Navigate and login to the Aviatrix Controller:<br><br>URL:  https://ctrl.pod(#).aviatrixlab.com<br>(For example:  if you have been assigned pod12, your access URL will be https://ctrl.pod12.aviatrixlab.com)<br><br>Username:  admin<br>Password:  Password123! <br> |
 | Expected Result | Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so? |
 
 Headings from `h1` through `h6` are constructed with a `#` for each level:
