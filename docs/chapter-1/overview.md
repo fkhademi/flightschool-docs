@@ -8,24 +8,17 @@ In this lab, we are going to explore our lab environment. The diagram below show
 ![Lab Overview](../images/lab-before.png)  
 _Figure 1: Lab Overview_
 
-Some of the key benefits are:
+## Lab 1.1 - Aviatrix Controller
 
-1. Markdown is simple to learn, with minimal extra characters, so it's also quicker to write content.
-2. Less chance of errors when writing in markdown.
-3. Produces valid XHTML output.
-4. Keeps the content and the visual display separate, so you cannot mess up the look of your site.
-5. Write in any text editor or Markdown application you like.
-6. Markdown is a joy to use!
+First, we are going to log into the controller. To do so, set up a connection with your browser by browsing to:
 
-John Gruber, the author of Markdown, puts it like this:
+```markdown
+| URL   | https://ctrl.pod(#).aviatrixlab.com |
+| Username | admin |
+| Password | Password123! |
+```
 
-> The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.
-> -- <cite>John Gruber</cite>
-
-
-Without further delay, let us go over the main elements of Markdown and what the resulting HTML looks like:
-
-## Headings
+Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
 
 Headings from `h1` through `h6` are constructed with a `#` for each level:
 
