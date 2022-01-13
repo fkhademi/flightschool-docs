@@ -12,7 +12,7 @@ _Figure 1: Lab Overview_
 
 First, we are going to log into the controller. To do so, set up a connection with your browser by browsing to:
 
-| Description | Log into the Aviatrix Controller |
+| Description | Log into the Aviatrix Controller |
 | Validate    | Navigate and login to the Aviatrix Controller:
 
 URL:  https://ctrl.pod(#).aviatrixlab.com
