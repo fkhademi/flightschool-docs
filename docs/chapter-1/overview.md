@@ -14,15 +14,32 @@ First, we are going to log into the controller. To do so, set up a connection wi
 
 ### Description
 Navigate and login to the Aviatrix Controller:
-
 ### Validate
 URL:  https://ctrl.pod(#).aviatrixlab.com
 > For example: if you have been assigned pod12, your access URL will be https://ctrl.pod12.aviatrixlab.com
 Username:  admin
 Password:  Password123!
-
 ### Expected Results
 Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>data</td>
+    <td>path to data files to supply the data that will be passed into templates.</td>
+  </tr>
+  <tr>
+    <td>engine</td>
+    <td>engine to be used for processing templates. Handlebars is the default.</td>
+  </tr>
+  <tr>
+    <td>ext</td>
+    <td>extension to be used for dest files.</td>
+  </tr>
+</table>
 
 
 Headings from `h1` through `h6` are constructed with a `#` for each level:
