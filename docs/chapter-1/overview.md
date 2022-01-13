@@ -24,20 +24,16 @@ Explore the Dashboard. As you can see, there are already gateways deployed in di
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
+    <td>Description</td>
+    <td>Navigate and login to the Aviatrix Controller:</td>
   </tr>
   <tr>
-    <td>data</td>
-    <td>path to data files to supply the data that will be passed into templates.</td>
+    <td>Validate</td>
+    <td>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</td>
   </tr>
   <tr>
-    <td>engine</td>
-    <td>engine to be used for processing templates. Handlebars is the default.</td>
-  </tr>
-  <tr>
-    <td>ext</td>
-    <td>extension to be used for dest files.</td>
+    <td>Expected Results</td>
+    <td>Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?</td>
   </tr>
 </table>
 
