@@ -28,6 +28,26 @@ First, we are going to log into the controller. To do so, set up a connection wi
 </table>
 
 
+## Lab 1.2 - Aviatrix CoPilot
+
+First, we are going to log into the controller. To do so, set up a connection with your browser by browsing to:
+
+<table>
+  <tr>
+    <td><b>Description</b></td>
+    <td>Navigate and login to the Aviatrix Controller:</td>
+  </tr>
+  <tr>
+    <td><b>Validate</b></td>
+    <td>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</td>
+  </tr>
+  <tr>
+    <td><b>Expected Results</b></td>
+    <td>Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?</td>
+  </tr>
+</table>
+
+
 Headings from `h1` through `h6` are constructed with a `#` for each level:
 
 ```markdown
