@@ -96,3 +96,11 @@ _Figure: Initial Topology_
 Tip: Double click on the blue bubbles for more detail!
 ### Expected Results
 You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+
+
+| **Description**       | Along with the Aviatrix Controller, CoPilot is also deployed in the Shared Services VPC.  CoPilot will be your best buddy for visualizing and operating the Multi-Cloud environment. |
+| **Validate**          | You can log into CoPilot by clicking on the Single Sign-On button in the controller:  
+![CoPilot Link](../images/copilot-link.png)  
+_Figure: CoPilot Link_  
+You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot. |
+| **Expected Results**  | extension to be used for dest files. |
