@@ -61,6 +61,7 @@ Make sure you do this for all 3 AWS spoke VPC’s:
 * shared-aws
 * aws-spoke1
 * aws-spoke2  
+  
 ### Expected Results
 Our environment now looks like this:
 ![Toplogy](../images/topology4.png)  
