@@ -55,9 +55,9 @@ In order execute the connectivity tests, we need to log on to the test instances
 **User:** ```admin```  
 **Password:** ```Password123!```  
 
-- (replace [x] with your pod ID)
-- If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
-  
+* _(replace [x] with your pod ID)_
+* _If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device._
+
 1- Connect into **GCP-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
 2- Run the following commands:
 ```
@@ -106,8 +106,3 @@ You can familiarize yourselves with the different functions in CoPilot and after
 | **Expected Results**  | extension to be used for dest files. |
 
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
