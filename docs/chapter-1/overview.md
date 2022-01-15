@@ -20,22 +20,6 @@ Open your browser and navigate to:
 ### Expected Results
 Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
 
-## Lab 1.1 - Aviatrix Controller
-**Description**  
-Navigate and login to the Aviatrix Controller.
----
-**Validate**  
-Open your browser and navigate to:
-
-**URL:** ```https://web.pod[x].aviatrixlab.com```  
-**User:** ```admin```  
-**Password:** ```Password123!```
-
----
-**Expected Results**  
-Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
-
-
 ## Lab 1.2 - Access Accounts
 ### Description
 In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges.
@@ -69,7 +53,6 @@ ping shared-priv.pod[x].aviatrixlab.com
 Not all of the ping tests will be successful.  Look at the Diagram in the Lab 1 Overview and you will see that only Azure and GCP are connected so far, but AWS is not connected, therefore the connectivity tests from GCP to AWS will not work.
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
-
 ### Description
 As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
 ### Validate
@@ -78,20 +61,23 @@ Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the exist
 You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
 
 ## Lab 1.5 - CoPilot
-
 ### Description
 Along with the Aviatrix Controller, CoPilot is also deployed in the Shared Services VPC.  CoPilot will be your best buddy for visualizing and operating the Multi-Cloud environment.
 ### Validate
-You can log into CoPilot by clicking on the Single Sign-On button in the controller:
-![CoPilot Link](../images/copilot-link.png)
-_Figure: CoPilot Link_
-You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot. 
+You can log into CoPilot by clicking on the Single Sign-On button in the controller:  
 
-The Dashboard tab provides a global overview of your Multi-Cloud network, the status, how much traffic is flowing, locations deployed, etc.
+![CoPilot Link](../images/copilot-link.png)  
+_Figure: CoPilot Link_  
+  
+You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot.  
 
-Topology will visualize the connectivity of the Multi-Cloud environment.  In the Topology view, all objects within a VPC/VNET are clustered together.  To open up a cluster, simply double-click.  This will display subnets, instances, Aviatrix Gateways, etc within a VPC/VNET.  Topology will also show you latency between links, and allows you to initiate some troubleshooting commands directly from the map.  Topology should look similar to this:
-![Topology1](../images/topology1.png)
-_Figure: Initial Topology_
+The Dashboard tab provides a global overview of your Multi-Cloud network, the status, how much traffic is flowing, locations deployed, etc.  
+
+Topology will visualize the connectivity of the Multi-Cloud environment.  In the Topology view, all objects within a VPC/VNET are clustered together.  To open up a cluster, simply double-click.  This will display subnets, instances, Aviatrix Gateways, etc within a VPC/VNET.  Topology will also show you latency between links, and allows you to initiate some troubleshooting commands directly from the map.  Topology should look similar to this:  
+
+![Topology1](../images/topology1.png)  
+_Figure: Initial Topology_  
+
 Tip: Double click on the blue bubbles for more detail!
 ### Expected Results
 You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
