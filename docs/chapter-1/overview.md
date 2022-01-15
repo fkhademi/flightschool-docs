@@ -21,10 +21,10 @@ Open your browser and navigate to:
 Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
 
 ## Lab 1.1 - Aviatrix Controller
-**Description**
+**Description**  
 Navigate and login to the Aviatrix Controller.
 ---
-**Validate**
+**Validate**  
 Open your browser and navigate to:
 
 **URL:** ```https://web.pod[x].aviatrixlab.com```  
@@ -32,7 +32,7 @@ Open your browser and navigate to:
 **Password:** ```Password123!```
 
 ---
-**Expected Results**
+**Expected Results**  
 Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
 
 
