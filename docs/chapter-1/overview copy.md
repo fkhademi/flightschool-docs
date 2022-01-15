@@ -9,32 +9,48 @@ In this lab, we are going to explore our lab environment. The diagram below show
 _Figure: Lab Overview_
 
 ## Lab 1.1 - Aviatrix Controller
-### Description
-Navigate and login to the Aviatrix Controller.
-### Validate
-Open your browser and navigate to:
 
-**URL:** ```https://web.pod[x].aviatrixlab.com```  
-**User:** ```admin```  
-**Password:** ```Password123!```  
-  
-### Expected Results
-Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
+First, we are going to log into the controller. To do so, set up a connection with your browser by browsing to:
+
+<table>
+  <tr>
+    <td><b>Description</b></td>
+    <td>Navigate and login to the Aviatrix Controller</td>
+  </tr>
+  <tr>
+    <td><b>Validate</b></td>
+    <td>URL:  <i>https://ctrl.pod(#).aviatrixlab.com</i><br>Username:  admin<br>Password:  Password123!</td>
+  </tr>
+  <tr>
+    <td><b>Expected Results</b></td>
+    <td>Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?</td>
+  </tr>
+</table>
 
 ## Lab 1.2 - Access Accounts
-### Description
-In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges.
-### Validate
-Have a look at the access accounts already set up under **_Accounts -> Access Accounts_**    
-### Expected Results
-Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured.
+
+<table>
+  <tr>
+    <td><b>Description</b></td>
+    <td>In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges.</td>
+  </tr>
+  <tr>
+    <td><b>Validate</b></td>
+    <td>Have a look at the access accounts already set up under Accounts -> Access Accounts</td>
+  </tr>
+  <tr>
+    <td><b>Expected Results</b></td>
+    <td>Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured</td>
+  </tr>
+</table>
 
 ## Lab 1.3 - Connectivity Check
+
 ### Description
-Each spoke VPC / VNET contains a Linux VM to test connectivity.  The purpose of this exercise is to verify the connectivity between Linux VMs in the spoke VPCs / VNETs in the 3 different clouds.
+Each spoke VPC / VNET contains a Linux VM to test connectivity.  The purpose of this exercise is to verify the connectivity between Linux VMs in the spoke VPCs / VNETs in the 3 different clouds
 ### Validate
 In order execute the connectivity tests, we need to log on to the test instances we have deployed throughout the lab. We use a web based SSH tool for this. Browse to:  
-
+  
 **URL:** ```https://web.pod[x].aviatrixlab.com```  
 **User:** ```admin```  
 **Password:** ```Password123!```  
