@@ -58,10 +58,10 @@ Create the spoke gateways for the existing VPC’s using the settings below by u
 _Fig. Create Spoke Gateway_  
 
 Make sure you do this for all 3 AWS spoke VPC’s:  
-* shared-aws
-* aws-spoke1
-* aws-spoke2  
-  
+* _shared-aws_
+* _aws-spoke1_
+* _aws-spoke2_
+
 ### Expected Results
 Our environment now looks like this:
 ![Toplogy](../images/topology4.png)  
