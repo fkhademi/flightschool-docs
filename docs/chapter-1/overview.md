@@ -60,10 +60,12 @@ In order execute the connectivity tests, we need to log on to the test instances
   
 - Connect into **GCP-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
 - Run the following command:  
-```ping azure-srv1-priv.pod[x].aviatrixlab.com```  
-```ping aws-srv1-priv.pod[x].aviatrixlab.com```  
-```ping aws-srv2-priv.pod[x].aviatrixlab.com```  
-```ping shared-priv.pod[x].aviatrixlab.com```  
+```
+ping azure-srv1-priv.pod[x].aviatrixlab.com  
+ping aws-srv1-priv.pod[x].aviatrixlab.com  
+ping aws-srv2-priv.pod[x].aviatrixlab.com  
+ping shared-priv.pod[x].aviatrixlab.com
+```  
 ### Expected Results
 Not all of the ping tests will be successful.  Look at the Diagram in the Lab 1 Overview and you will see that only Azure and GCP are connected so far, but AWS is not connected, therefore the connectivity tests from GCP to AWS will not work.
 
