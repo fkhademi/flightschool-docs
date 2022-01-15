@@ -27,23 +27,20 @@ First, we are going to log into the controller. To do so, set up a connection wi
   </tr>
 </table>
 
-
 ## Lab 1.2 - Access Accounts
-
-In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges. Have a look at the access accounts already set up under Accounts -> Access Accounts.
 
 <table>
   <tr>
     <td><b>Description</b></td>
-    <td>Navigate and login to the Aviatrix Controller:</td>
+    <td>In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges.</td>
   </tr>
   <tr>
     <td><b>Validate</b></td>
-    <td><p>URL:  https://ctrl.pod(#).aviatrixlab.com</p><br>Username:  admin<br>Password:  Password123!</td>
+    <td>Have a look at the access accounts already set up under Accounts -> Access Accounts</td>
   </tr>
   <tr>
     <td><b>Expected Results</b></td>
-    <td>Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?</td>
+    <td>Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured</td>
   </tr>
 </table>
 
