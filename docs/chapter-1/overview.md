@@ -104,3 +104,10 @@ You should be able to view the VPC / VNET and Gateway Route Tables for both the 
 _Figure: CoPilot Link_  
 You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot. |
 | **Expected Results**  | extension to be used for dest files. |
+
+
+| Option | Description |
+| ------ | ----------- |
+| data   | path to data files to supply the data that will be passed into templates. |
+| engine | engine to be used for processing templates. Handlebars is the default. |
+| ext    | extension to be used for dest files. |
