@@ -46,14 +46,10 @@ First, we are going to log into the controller. To do so, set up a connection wi
 
 ## Lab 1.3 - Connectivity Check
 
-<table>
-  <tr>
-    <td><b>Description</b></td>
-    <td>Each spoke VPC / VNET contains a Linux VM to test connectivity.  The purpose of this exercise is to verify the connectivity between Linux VMs in the spoke VPCs / VNETs in the 3 different clouds.</td>
-  </tr>
-  <tr>
-    <td><b>Validate</b></td>
-    <td>In order execute the connectivity tests, we need to log on to the test instances we have deployed throughout the lab. We use a web based SSH tool for this. Browse to:
+### Description
+Each spoke VPC / VNET contains a Linux VM to test connectivity.  The purpose of this exercise is to verify the connectivity between Linux VMs in the spoke VPCs / VNETs in the 3 different clouds
+### Validate
+In order execute the connectivity tests, we need to log on to the test instances we have deployed throughout the lab. We use a web based SSH tool for this. Browse to:
 
 https://web.pod<podnumber>.aviatrixlab.com
 
@@ -68,12 +64,8 @@ o	ping aws-srv1-priv.pod[x].aviatrixlab.com
 o	ping aws-srv2-priv.pod[x].aviatrixlab.com
 	Successful – Yes | No 
 o	ping shared-priv.pod[x].aviatrixlab.com
-	Successful – Yes | No 
-</td>
-  </tr>
-  <tr>
-    <td><b>Expected Results</b></td>
-    <td>Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured</td>
-  </tr>
-</table>
+	Successful – Yes | No
+### Expected Results
+Accounts in GCP, AWS and Azure have already been onboarded and you should see the three accounts in the list.  The accounts should also be green, meaning the permissions in the accounts are correctly configured
+
 
