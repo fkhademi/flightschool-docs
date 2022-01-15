@@ -15,11 +15,11 @@ First, we are going to log into the controller. To do so, set up a connection wi
 <table>
   <tr>
     <td><b>Description</b></td>
-    <td>Navigate and login to the Aviatrix Controller:</td>
+    <td>Navigate and login to the Aviatrix Controller</td>
   </tr>
   <tr>
     <td><b>Validate</b></td>
-    <td>URL:  `https://ctrl.pod(#).aviatrixlab.com`<br>Username:  `admin`<br>Password:  `Password123!`</td>
+    <td>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</td>
   </tr>
   <tr>
     <td><b>Expected Results</b></td>
@@ -39,7 +39,7 @@ First, we are going to log into the controller. To do so, set up a connection wi
   </tr>
   <tr>
     <td><b>Validate</b></td>
-    <td><p>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</p></td>
+    <td><p>URL:  https://ctrl.pod(#).aviatrixlab.com</p><br>Username:  admin<br>Password:  Password123!</td>
   </tr>
   <tr>
     <td><b>Expected Results</b></td>
