@@ -23,7 +23,27 @@ For the VPC CIDR, replace “x” with your pod number. For example, if your pod
 By default, it will use the assigned CIDR to add a private and public subnet to each availability zone in AWS. As of version 6.1, we can modify this behavior in the Advanced settings. Click add new again from the Create a VPC window and have a look at these settings. Try creating and deleting some VPC’s and VNET’s.
 ### Expected Results
 Our environment now looks like this:  
-![Create VPC](../images/topology2.png)  
-_Fig. Create Transit VPC_  
+![Topology](../images/topology2.png)  
+_Fig. Topology_  
 
 Check out the CoPilot Topology View.  Do you see the newly created Transit VPC?
+
+## Lab 2.2 - Deploy the Aviatrix transit gateway
+### Description
+In this exercise we are going to launch the Aviatrix transit gateway in the newly created Transit VPC in AWS. 
+### Validate
+Browse to **_Multi-Cloud Transit -> Setup_** and launch a new transit gateway via step 1 with the settings below.  
+
+The VPC ID will differ from your environment, but we will select the VPC that we just created and named _aws-transit_. For the public subnet, use the one that has _Public-gateway_ in the name and is located in availability zone _a_. You can click on any of the info buttons if you want to understand what the other settings relate to. Click create when you are ready. This will take a few minutes, have a coffee.  
+![Create VPC](../images/create-transit-gw.png)  
+_Fig. Create Aviatrix Transit Gateway_  
+  
+Once the gateway has been deployed, take a look at step 2 on this setup page. We are not deploying an HA solution in this workshop, but you can see how easy it is to deploy a second gateway and cluster them in an HA pair.  
+### Expected Results
+Our environment now looks like this:  
+![Toplogy](../images/topology3.png)  
+_Fig. Topology with AWS Transit_  
+
+Check out CoPilot Topology.  Why is the AWS Transit cluster now visible?  
+![Toplogy](../images/copilot-trans-gw.png)  
+_Fig. Copilot Topology_  
