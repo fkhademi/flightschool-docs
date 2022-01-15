@@ -19,7 +19,7 @@ First, we are going to log into the controller. To do so, set up a connection wi
   </tr>
   <tr>
     <td><b>Validate</b></td>
-    <td>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</td>
+    <td>URL:  <i>https://ctrl.pod(#).aviatrixlab.com</i><br>Username:  admin<br>Password:  Password123!</td>
   </tr>
   <tr>
     <td><b>Expected Results</b></td>
@@ -28,9 +28,9 @@ First, we are going to log into the controller. To do so, set up a connection wi
 </table>
 
 
-## Lab 1.2 - Aviatrix CoPilot
+## Lab 1.2 - Access Accounts
 
-First, we are going to log into the controller. To do so, set up a connection with your browser by browsing to:
+In order for the controller to be able to access the different CSP environments, we need to provide it with accounts with the correct privileges. Have a look at the access accounts already set up under Accounts -> Access Accounts.
 
 <table>
   <tr>
