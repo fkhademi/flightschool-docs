@@ -51,21 +51,22 @@ Each spoke VPC / VNET contains a Linux VM to test connectivity.  The purpose of 
 ### Validate
 In order execute the connectivity tests, we need to log on to the test instances we have deployed throughout the lab. We use a web based SSH tool for this. Browse to:  
   
-```https://web.pod[x].aviatrixlab.com  
-User: admin  
-Password:  Password123! 
-```  
-You can log in with username “admin” and password “Password123!”. If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
+**URL:** _https://web.pod[x].aviatrixlab.com_  
+**User:** _admin_  
+**Password:** _Password123!_  
+
+>(replace [x] with your pod ID)  
+>If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
   
-- Connect into GCP-SRV1 from the “ALL CONNECTIONS” pane. (Tip: use right-click open in new tab)  
-- Run the following command (replace [x] with your pod ID):  
-- ping azure-srv1-priv.pod[x].aviatrixlab.com  
+- Connect into **GCP-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
+- Run the following command:  
+```ping azure-srv1-priv.pod[x].aviatrixlab.com```  
 Successful – Yes | No  
-- ping aws-srv1-priv.pod[x].aviatrixlab.com  
+```ping aws-srv1-priv.pod[x].aviatrixlab.com```  
 Successful – Yes | No  
-- ping aws-srv2-priv.pod[x].aviatrixlab.com  
+```ping aws-srv2-priv.pod[x].aviatrixlab.com```  
 Successful – Yes | No  
-- ping shared-priv.pod[x].aviatrixlab.com  
+```ping shared-priv.pod[x].aviatrixlab.com```  
 Successful – Yes | No
 
 ### Expected Results
