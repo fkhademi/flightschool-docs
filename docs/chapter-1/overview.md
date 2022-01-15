@@ -51,10 +51,10 @@ Each spoke VPC / VNET contains a Linux VM to test connectivity.  The purpose of 
 ### Validate
 In order execute the connectivity tests, we need to log on to the test instances we have deployed throughout the lab. We use a web based SSH tool for this. Browse to:  
   
-**https://web.pod[x].aviatrixlab.com**  
-**User: admin**  
-**Password:  Password123!** 
-  
+```https://web.pod[x].aviatrixlab.com  
+User: admin  
+Password:  Password123! 
+```  
 You can log in with username “admin” and password “Password123!”. If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
   
 - Connect into GCP-SRV1 from the “ALL CONNECTIONS” pane. (Tip: use right-click open in new tab)  
