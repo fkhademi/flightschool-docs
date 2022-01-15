@@ -73,21 +73,11 @@ You can familiarize yourselves with the different functions in CoPilot and after
 
 The Dashboard tab provides a global overview of your Multi-Cloud network, the status, how much traffic is flowing, locations deployed, etc.  
 
-Topology will visualize the connectivity of the Multi-Cloud environment.  In the Topology view, all objects within a VPC/VNET are clustered together.  To open up a cluster, simply double-click.  This will display subnets, instances, Aviatrix Gateways, etc within a VPC/VNET.  Topology will also show you latency between links, and allows you to initiate some troubleshooting commands directly from the map.  Topology should look similar to this:  
-
-![Topology1](../images/topology1.png)  
-_Figure: Initial Topology_  
+Topology will visualize the connectivity of the Multi-Cloud environment.  In the Topology view, all objects within a VPC/VNET are clustered together.  To open up a cluster, simply double-click.  This will display subnets, instances, Aviatrix Gateways, etc within a VPC/VNET.  Topology will also show you latency between links, and allows you to initiate some troubleshooting commands directly from the map.  
 
 Tip: Double click on the blue bubbles for more detail!
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+By clicking the CoPilot link in the Controller, you should be redirected to CoPilot and automatically signed in.  You should be able to view Topology and see the current Multi-Cloud Network topology.  Topology should look similar to this:  
 
-
-| **Description**       | Along with the Aviatrix Controller, CoPilot is also deployed in the Shared Services VPC.  CoPilot will be your best buddy for visualizing and operating the Multi-Cloud environment. |
-| **Validate**          | You can log into CoPilot by clicking on the Single Sign-On button in the controller:  
-![CoPilot Link](../images/copilot-link.png)  
-_Figure: CoPilot Link_  
-You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot. |
-| **Expected Results**  | extension to be used for dest files. |
-
-
+![Topology1](../images/topology1.png)  
+_Figure: Initial Topology_  
