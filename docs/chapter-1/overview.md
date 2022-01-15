@@ -39,7 +39,7 @@ First, we are going to log into the controller. To do so, set up a connection wi
   </tr>
   <tr>
     <td><b>Validate</b></td>
-    <td>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</td>
+    <td><p>URL:  https://ctrl.pod(#).aviatrixlab.com<br>Username:  admin<br>Password:  Password123!</p></td>
   </tr>
   <tr>
     <td><b>Expected Results</b></td>
