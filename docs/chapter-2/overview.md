@@ -71,13 +71,23 @@ Check out CoPilot Topology.
 ![Toplogy](../images/copilot-spoke-gw.png)  
 _Fig. Copilot Topology_
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 2.4 - Attach spoke gateways to the Aviatrix transit gateway
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+We now have all of our gateways deployed. Next we need to set up connectivity between the spoke gateways and the transit gateway.
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+Go to **_step 6a_** on the **_Multi-Cloud Transit -> Setup_** page. Select the spoke gateway and transit gateway as shown below. **Repeat this for all 3 AWS spokes**.  
+![Toplogy](../images/attach-spoke.png)  
+_Fig. Attach Spokes_
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+If you now go to the **_Multi-Cloud Transit -> List_** page, you can see the 3 transit gateways and each of the spoke gateways attached to them in the Spoke List. Validate that the spokes you just attached are showing up here.  
+  
+Our environment now looks like this:
+![Toplogy](../images/topology5.png)  
+_Fig. Topology with Attached Spokes_  
+
+Check out CoPilot Topology.    
+![Toplogy](../images/copilot-spoke-attach.png)  
+_Fig. Copilot Topology with Attached Spokes_
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
