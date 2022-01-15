@@ -57,6 +57,7 @@ In order execute the connectivity tests, we need to log on to the test instances
 
 *(replace [x] with your pod ID)*
 >If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
+  
 1- Connect into **GCP-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
 2- Run the following commands:
 ```
