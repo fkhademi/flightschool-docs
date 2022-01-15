@@ -5,8 +5,8 @@ Lab time: ~20 minutes
 
 In this lab, we are going to explore our lab environment. The diagram below shows the current state of the lab environment. You will extend this environment during the exercises. The instructor will briefly explain the lab setup in the diagram. You can find a more complete and detailed diagram here.
 
-![Lab Overview](../images/lab-before.png)  
-_Figure 1: Lab Overview_
+![Lab Overview](../images/lab-before.png)
+_Figure: Lab Overview_
 
 ## Lab 1.1 - Aviatrix Controller
 
@@ -55,8 +55,8 @@ In order execute the connectivity tests, we need to log on to the test instances
 **User:** ```admin```  
 **Password:** ```Password123!```  
 
-*(replace [x] with your pod ID)*
->If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
+- (replace [x] with your pod ID)
+- If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device.  
   
 1- Connect into **GCP-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
 2- Run the following commands:
@@ -69,4 +69,30 @@ ping shared-priv.pod[x].aviatrixlab.com
 ### Expected Results
 Not all of the ping tests will be successful.  Look at the Diagram in the Lab 1 Overview and you will see that only Azure and GCP are connected so far, but AWS is not connected, therefore the connectivity tests from GCP to AWS will not work.
 
+## Lab 1.4 - Exploring the Aviatrix Gateways
 
+### Description
+As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+### Validate
+Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+### Expected Results
+You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+
+## Lab 1.5 - CoPilot
+
+### Description
+Along with the Aviatrix Controller, CoPilot is also deployed in the Shared Services VPC.  CoPilot will be your best buddy for visualizing and operating the Multi-Cloud environment.
+### Validate
+You can log into CoPilot by clicking on the Single Sign-On button in the controller:
+![CoPilot Link](../images/copilot-link.png)
+_Figure: CoPilot Link_
+You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot. 
+
+The Dashboard tab provides a global overview of your Multi-Cloud network, the status, how much traffic is flowing, locations deployed, etc.
+
+Topology will visualize the connectivity of the Multi-Cloud environment.  In the Topology view, all objects within a VPC/VNET are clustered together.  To open up a cluster, simply double-click.  This will display subnets, instances, Aviatrix Gateways, etc within a VPC/VNET.  Topology will also show you latency between links, and allows you to initiate some troubleshooting commands directly from the map.  Topology should look similar to this:
+![Topology1](../images/topology1.png)
+_Figure: Initial Topology_
+Tip: Double click on the blue bubbles for more detail!
+### Expected Results
+You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
