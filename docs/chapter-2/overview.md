@@ -50,7 +50,10 @@ _Fig. Copilot Topology_
 
 ## Lab 2.3 - Deploy the spoke gateways
 ### Description
-Now that we have our transit set up, we will deploy the Aviatrix spoke gateways in the *AWS spoke VPC’s* that were already prepared. Create the spoke gateways for the existing VPC’s using the settings below by using **_step 4_** (scroll down) on the **_Multi-Cloud Transit -> Setup_** page.  
+Now that we have our transit set up, we will deploy the Aviatrix spoke gateways in the *AWS spoke VPC’s* that were already prepared.   
+
+### Validate
+Create the spoke gateways for the existing VPC’s using the settings below by using **_step 4_** (scroll down) on the **_Multi-Cloud Transit -> Setup_** page.  
 ![Toplogy](../images/create-spoke-gw.png)  
 _Fig. Create Spoke Gateway_  
 
@@ -58,18 +61,14 @@ Make sure you do this for all 3 AWS spoke VPC’s:
 * shared-aws
 * aws-spoke1
 * aws-spoke2  
-
-### Validate
+### Expected Results
 Our environment now looks like this:
 ![Toplogy](../images/topology4.png)  
 _Fig. Topology with Spokes_  
 
 Check out CoPilot Topology.    
 ![Toplogy](../images/copilot-spoke-gw.png)  
-_Fig. Copilot Topology_  
-
-### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+_Fig. Copilot Topology_
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
