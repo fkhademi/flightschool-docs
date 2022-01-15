@@ -16,10 +16,25 @@ Open your browser and navigate to:
 
 **URL:** ```https://web.pod[x].aviatrixlab.com```  
 **User:** ```admin```  
-**Password:** ```Password123!```  
-  
+**Password:** ```Password123!```
 ### Expected Results
 Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
+
+## Lab 1.1 - Aviatrix Controller
+**Description**
+Navigate and login to the Aviatrix Controller.
+---
+**Validate**
+Open your browser and navigate to:
+
+**URL:** ```https://web.pod[x].aviatrixlab.com```  
+**User:** ```admin```  
+**Password:** ```Password123!```
+
+---
+**Expected Results**
+Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
+
 
 ## Lab 1.2 - Access Accounts
 ### Description
