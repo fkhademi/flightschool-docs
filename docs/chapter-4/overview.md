@@ -55,31 +55,26 @@ AppIQ will show you the path between the selected VMs, will show the latency on 
 ![AppIQ Results](../images/appiq-results.png)  
 _Fig. AppIQ Results_  
 
-
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 4.4 - Troubleshooting Site2Cloud and BGP
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+The Aviatrix Controller allows you to conveniently view tunnel logs for Site2Cloud connections as well as run BGP commands to get insights into BGP session states, neighbor status, etc.
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+To view the status of a Site2Cloud connection, navigate to **_Site2Cloud -> Diagnostics_**.  Select the _VPC_, _Aviatrix GW_ and **Show Logs**.
+
+![Site2Cloud Status](../images/site2cloud-status.png)  
+_Fig. Site2Cloud Status_  
+
+This is helpful in situations where there is a configuration or negotiation issue in either Phase 1 or Phase 2 negotiation.  
+
+Once Site2Cloud connection is up, you can verify the BGP session status **_Multi-Cloud Transit -> Advanced Config -> BGP_**.  Here you will see the state of a selected BGP connection and whether it has learned any routes.  
+
+![BGP Status](../images/bgp-status.png)  
+_Fig. BGP Status_  
+
+To run some commands from the GW, click the **_BGP Diagnostics_** tab and select the Aviatrix Transit GW from the list.  Select a command from the list, or type:  ```show ip bgp neighbors```
+
+![BGP Commands](../images/bgp-commands.png)  
+_Fig. BGP Commands_  
+
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
-
-
-
-## Lab 1.4 - Exploring the Aviatrix Gateways
-### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
-### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
-### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
-
-
-
-## Lab 1.4 - Exploring the Aviatrix Gateways
-### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
-### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
-### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+Use the above commands to troubleshoot IPSEC tunnels and BGP connections.
