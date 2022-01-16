@@ -131,7 +131,7 @@ Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the exist
 ### Expected Results
 You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 2.7 - Exploring the Aviatrix Gateways
 ### Description
 Now that we have built the AWS environment, let’s connect it to the Azure and GCP environment.
 ### Validate
