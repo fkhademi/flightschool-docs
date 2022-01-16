@@ -213,13 +213,53 @@ After adding the connection to on-prem and approving the learned routes, the con
 ![Toplogy](../images/topology7.png)  
 _Fig. Topology with On-Prem Connectivity_
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 2.8 - Infrastructure as Code (Bonus Lab)
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+All the elements you have created through the UI, can also be created through the API or the official **Aviatrix Terraform provider**. You can find more information on these here:  
+https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs
+
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+We have prepared some Terraform code for you, which you will explore and deploy.
+
+* Connect into AWS-SRV1
+* Download the prepared Terraform environment (Warning, copy/paste of the command might lose some characters, if you get an error or request for username and password, make sure the URL is correct. Often one of the hyphens (-) is dropped.)
+```
+git clone --branch v0.0.2 https://gitlab.com/dhagens-aviatrix-public/misc/cne-terraform-lab.git
+cd cne-terraform-lab
+chmod +x setup.sh
+./setup.sh
+```
+
+Let’s explore the Terraform files we have cloned from the git repository. Explore the file contents of main.tf, variables.tf, providers.tf and vars.tfvars. Use your favorite editor (cat, less, more, vi, nano).
+
+> What do you expect will be created when we run this Terraform code?
+
+In this lab, we are using Terraform modules, provided by Aviatrix. These allow you to quickly build out your environment, based on larger building blocks, rather than individual resources. You can find more available modules here:  
+
+https://registry.terraform.io/namespaces/terraform-aviatrix-modules  
+
+We need to provide our credentials, so Terraform can authenticate against the Aviatrix controller. Edit the file vars.tfvars and fill it out with the correct information.  
+
+Now that we have set up the variables, we need to initialize Terraform. This allows for the required providers and modules to be downloaded.  
+
+```terraform init```
+
+Next we will execute a “plan”. This means that Terraform will compare the live environment with the desired state we declared in our Terraform files
+
+```terraform plan -var-file="vars.tfvars"```
+
+Investigate the proposed changes by Terraform. Now we will apply them to the live environment:
+
+```terraform apply -var-file="vars.tfvars"```
+
+Once Terraform is finished, have a look at the newly created terraform.tfstate file. This contains information of all infrastructure created through Terraform. This is referred to as “the state”. Losing it can cause a lot of trouble, but that is for another (Terraform) lesson.
+
+Log in to the controller and see if you can find the changes that were made. Once you have done that, we will clean up the changes:
+
+```terraform destroy -var-file="vars.tfvars"```
+
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+By cloning the repo, and running the above commands, you should see how simple it can be to automate your infrastructure deployments using Terraform.
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
