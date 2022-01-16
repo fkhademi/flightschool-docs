@@ -64,28 +64,108 @@ _Fig. Security Domain Attachments_
 ### Expected Results
 Once you have done this, have a look at the Security Domain overview in CoPilot. You will find it by clicking **_Security_** in the menu. This should help you clearly understand the Security Domains and the Connection Policies.
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 3.5 - Connectivity Tests
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+Now that we have created our segmentation and connection policies, let’s test what connectivity is possible.
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+* Connect into AWS-SRV1
+* Run the following commands:
+```
+ping aws-srv2-priv.pod[x].aviatrixlab.com
+ping azure-srv1-priv.pod[x].aviatrixlab.com
+ping gcp-srv1-priv.pod[x].aviatrixlab.com
+ping shared-priv.pod[x].aviatrixlab.com
+ping onprem-cne-priv.aviatrixlab.com
+```
+
+> Can you explain why some ping’s were successful and others weren’t?
+
+* Connect into AWS-SRV2
+* Run the following commands:
+```
+ping aws-srv1-priv.pod[x].aviatrixlab.com
+ping azure-srv1-priv.pod[x].aviatrixlab.com
+ping gcp-srv1-priv.pod[x].aviatrixlab.com
+ping shared-priv.pod[x].aviatrixlab.com
+ping onprem-cne-priv.aviatrixlab.com
+```
+
+> Can you explain why some ping’s were successful and others weren’t?
+
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+Connectivity tests should only be successful when the necessary Connection Policies are in place between two Security Domains.
 
-
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 3.6 - FQDN Filtering
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
-### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
-### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+Another security feature the Aviatrix gateways provide, is FQDN filtering. A common challenge in the cloud is protecting cloud instances from accessing untrusted destinations on the internet. We want to make sure they can only gain access to trusted destinations, like update servers, known API endpoints, etc. FQDN based filtering does exactly that, without having to maintain a list of trusted IP addresses in a NSG or SG.
 
+FQDN Egress filtering is supported in multiple clouds, but we are going to configure it in AWS. AWS has the concept of public and private subnets. Aviatrix can apply FQDN egress filtering on both types of networks. Because our test instances are in the public subnet, we need to set up our environment to filter traffic for public instances.
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
-### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+![Egress Diagram](../images/egress-diagram.png)  
+_Fig. Egress Diagram_  
+
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+First, we are going to deploy a Public Filtering Subnet and a gateway which will do the actual FQDN egress filtering. Go to the **_Security -> Public Subnet_** page. Click **_Add New_**. Create the gateway according to the settings shown below. In order to select all routing tables, you can use shift or control.  
+
+![Egress Gateway Spoke1](../images/egress-gw1.png)  
+_Fig. Egress Gateway Spoke1_  
+
+We need to create another gateway for our second AWS spoke. Create it with the below settings.
+
+![Egress Gateway Spoke2](../images/egress-gw2.png)  
+_Fig. Egress Gateway Spoke2_  
+
+All egress traffic for the subnets that are attached to the selected route tables is now being routed through the filtering gateway. The controller took care of adjusting the routing for us.
+
+Let’s create a new tag for FQDN filtering. A tag is list of domains that are allowed or denied. We can create multiple tags and we can attach multiple tags to gateways.
+
+Go to the **_Security -> Egress Control_** page. Go to step 3 and click **_New Tag_**. Create the following tags: _Spoke1_, _Spoke2_ and _All Spokes_.
+
+We are going to create these tags and add the following domains. **Make sure to hit save and update before you click close!**  
+
+| Tag | Domain | Protocol & Port | Action |
+| ------ | ----------- | ---------- | ---------- |
+| All Spokes   | www.github.com | ICMP / Empty | Base Policy |
+| Spoke1   | www.microsoft.com | ICMP / Empty | Base Policy |
+| Spoke2   | www.ubuntu.com | ICMP / Empty | Base Policy |
+
+![Egress Tags](../images/egress-tags.png)  
+_Fig. Egress Tag Config_  
+
+Next, we need to enable the tags:
+
+![Egress Tags](../images/enable-egress-tags.png)  
+_Fig. Enable Egress Tags_  
+
+These tags are not yet assigned to our gateways, so they are not yet filtering any traffic. Click **_Attach Gateway_**, and attach the tags as follows:
+
+| Tag | Gateways |
+| ------ | ----------- |
+| All Spokes   | psf-01, psf-02 |
+| Spoke1   | psf-01 |
+| Spoke2   | psf-02 |
+
+* Connect into AWS-SRV1 (If you are having trouble connecting, disable the tags, try to connect again and then re-enable the tags)
+* Run the following commands:
+```
+ping www.github.com
+ping www.microsoft.com
+ping www.ubuntu.com
+```
+
+> Can you explain why some ping’s were successful and others weren’t?
+
+* Connect into AWS-SRV2
+* Run the following commands:
+```
+ping www.github.com
+ping www.microsoft.com
+ping www.ubuntu.com
+```
+
+> Can you explain why some ping’s were successful and others weren’t?
+
+You can use the same gateways to filter ingress traffic, with [Aviatrix ThreatIQ and ThreatGuard](https://aviatrix.com/resources/solution-briefs/threatiq-threatguard-datasheet-fnl)! Feel free to play around with this if you have some time.
+
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+The Egress gateways should only allow communication to the URLs specified in the tags, and all other Internet bound traffic should be dropped.
