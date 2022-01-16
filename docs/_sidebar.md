@@ -1,9 +1,9 @@
 ![Aviatrix Logo](../images/aviatrix-logo.png)
-- [Lab 1 - Lab Overview](chapter-1/overview.md)
-- [Lab 2 - Multi-Cloud Transit](chapter-2/overview.md)
-- [Lab 3 - Security Features](chapter-3/overview.md)
-- [Lab 4 - Visbility & Operations](chapter-4/overview.md)
-- [Summary](overview.md)
+- [Lab 1 - Lab Overview](lab1.md)
+- [Lab 2 - Multi-Cloud Transit](lab2.md)
+- [Lab 3 - Security Features](lab3.md)
+- [Lab 4 - Visbility & Operations](lab4.md)
+- [Summary](summary.md)
 
 **PROJECT INFO**  
 * [GitHub Repository](https://github.com/fkhademi/flightschool-docs)  
