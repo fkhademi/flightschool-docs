@@ -71,7 +71,7 @@ Check out CoPilot Topology.
 ![Toplogy](../images/copilot-spoke-gw.png)  
 _Fig. Copilot Topology_
 
-## Lab 2.4 - Attach spoke gateways to the Aviatrix transit gateway
+## Lab 2.4 - Attach Spoke Gateways to Aviatrix Transit GW
 ### Description
 We now have all of our gateways deployed. Next we need to set up connectivity between the spoke gateways and the transit gateway.
 ### Validate
@@ -89,13 +89,39 @@ Check out CoPilot Topology.
 ![Toplogy](../images/copilot-spoke-attach.png)  
 _Fig. Copilot Topology with Attached Spokes_
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 2.5 - Test Connectivity Between AWS Spokes
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+The AWS Spokes should now be connected to the AWS Transit so now we can check connectivity between the spokes.
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+To test the connectivity, we will SSH using the public FQDN of one of our Linux hosts, and run ping to the private FQDNs of the hosts in the other spokes.  
+* Connect into AWS-SRV1
+* Run the following commands:
+```
+ping aws-srv2-priv.pod[x].aviatrixlab.com
+ping shared-priv.pod[x].aviatrixlab.com
+```
+> Were you able to ping aws-srv2-priv and shared-priv?
+
+Go to **_Multi-Cloud Transit -> List_** and look at the gateway routing tables for _aws-spoke1_, _AWS-Spoke2_ and _AWS-Shared_.  
+
+By default, routes are not propagated between spokes attached to the same transit gateway. We have to enable a setting on our transit gateway to allow this to happen.  
+
+Go to **_Multi-Cloud Transit -> Advanced Config_**. Select the _AWS-TRANSIT-GW_ and enable _Connected Transit_.
+
+* Connect into AWS-SRV1
+* Run the following commands:
+```
+ping aws-srv2-priv.pod[x].aviatrixlab.com
+ping shared-priv.pod[x].aviatrixlab.com
+```
+* Trace the hops between Spoke1 and Spoke2 in AWS
+```
+mtr aws-srv2-priv.pod[x].aviatrixlab.com
+```
+> Were you able to ping aws-srv2-priv and shared-priv?
+
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+After enabling Connected Transit, the spoke to spoke communication tests should now be successful and spoke routes should be propagated.
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
