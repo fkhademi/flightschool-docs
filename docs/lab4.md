@@ -11,12 +11,12 @@ While operating a cloud environment, there are times where following and capturi
 ### Validate
 To start a packet capture, navigate to **_Troubleshoot -> Diagnostics -> Network -> Packet Capture_**.  Select one of the Aviatrix Gateways, the interface (eth0), optionally filter on host and/or port, and click _Start_.  Captured packets will be displayed live - click _Stop_ when finished, download the PCAP and open it in Wireshark.
 
-![Packet Capture](../images/packet-capture.png)  
+![Packet Capture](images/packet-capture.png)  
 _Fig. Packet Capture_  
 ### Expected Results
 You should be able to view live captured packets in the UI.  By downloading the PCAP and opening the file in Wireshark, you will see more detailed packet information.
 
-![Packet Capture Details](../images/packet-capture-details.png)  
+![Packet Capture Details](images/packet-capture-details.png)  
 _Fig. Packet Capture Details_  
 
 ## Lab 4.2 - Traceroute, Ping, Telnet
@@ -31,7 +31,7 @@ To test this out, open _Co-Pilot_ and navigate to **_Topology_**.  Doubleclick o
 * Click **Active Sessions** to view the current active sessions running over that Gateway
 * Click **Interface Stats** to the gateway interface stats, packet drops, errors, PPS limits, etc
 
-![Gateway Diagnostics](../images/gateway-diag.png)  
+![Gateway Diagnostics](images/gateway-diag.png)  
 _Fig. Gateway Diagnostics_  
 
 ### Expected Results
@@ -46,13 +46,13 @@ Open CoPilot and navigate to **_AppIQ_**.
 * In the **Destination Instance** dropdown, select the instance _shared-srv_
 * Enter port _443_, select the _Private interface_ and click **Submit**
 
-![AppIQ](../images/appiq-config.png)  
+![AppIQ](images/appiq-config.png)  
 _Fig. AppIQ_  
 
 ### Expected Results
 AppIQ will show you the path between the selected VMs, will show the latency on each hop, Gateway utilization on each hop and all infrastructure related settings (security groups, route tables, etc).  Scroll through the results - sometimes a simple thing like a missing security group rule can take hours to troubleshoot, but with AppIQ you can get find the issues in seconds or minutes.  
 
-![AppIQ Results](../images/appiq-results.png)  
+![AppIQ Results](images/appiq-results.png)  
 _Fig. AppIQ Results_  
 
 ## Lab 4.4 - Troubleshooting Site2Cloud and BGP
@@ -61,19 +61,19 @@ The Aviatrix Controller allows you to conveniently view tunnel logs for Site2Clo
 ### Validate
 To view the status of a Site2Cloud connection, navigate to **_Site2Cloud -> Diagnostics_**.  Select the _VPC_, _Aviatrix GW_ and **Show Logs**.
 
-![Site2Cloud Status](../images/site2cloud-status.png)  
+![Site2Cloud Status](images/site2cloud-status.png)  
 _Fig. Site2Cloud Status_  
 
 This is helpful in situations where there is a configuration or negotiation issue in either Phase 1 or Phase 2 negotiation.  
 
 Once Site2Cloud connection is up, you can verify the BGP session status **_Multi-Cloud Transit -> Advanced Config -> BGP_**.  Here you will see the state of a selected BGP connection and whether it has learned any routes.  
 
-![BGP Status](../images/bgp-status.png)  
+![BGP Status](images/bgp-status.png)  
 _Fig. BGP Status_  
 
 To run some commands from the GW, click the **_BGP Diagnostics_** tab and select the Aviatrix Transit GW from the list.  Select a command from the list, or type:  ```show ip bgp neighbors```
 
-![BGP Commands](../images/bgp-commands.png)  
+![BGP Commands](images/bgp-commands.png)  
 _Fig. BGP Commands_  
 
 ### Expected Results
@@ -92,5 +92,5 @@ Login to CoPilot and navigate to **_FlowIQ_**.  In the **Overview** tab, let's c
 ### Expected Results
 Find any flow that goes across your cloud network.  In this example we are looking at all pings across the cloud network over the last 24 hours, but you can create much more complex filters.
 
-![FlowIQ](../images/flowiq.png)  
+![FlowIQ](images/flowiq.png)  
 _Fig. FlowIQ_ 

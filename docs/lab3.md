@@ -10,7 +10,7 @@ In this lab, we are going to explore some of the security features that Aviatrix
 Until now we have set up a relatively flat any to any network.  Now let's see how we can segment our network by using Aviatrix Multi-Cloud Network Segmentation.
 ### Validate
 Go to **_Multi-Cloud Transit -> Segmentation_**. First we need to enable segmentation for all 3 transit gateways.  
-![Lab Overview](../images/enable-segmentation.png)  
+![Lab Overview](images/enable-segmentation.png)  
 _Fig. Enable Segmentation_   
 
 Select the gateway and click enable. **Make sure to do this for all 3 transit gateways**.
@@ -25,7 +25,7 @@ Now we are going to create some security domains, which we can use for segmentat
 ### Validate
 Go to **_Multi-Cloud Transit -> Segmentation -> step 2_** , create the following security domains: _Red_, _Blue_, _Shared_ and _Onprem_.  
 
-![Lab Overview](../images/sec-domains.png)  
+![Lab Overview](images/sec-domains.png)  
 _Fig. Create Security Domains_  
 
 ### Expected Results
@@ -37,7 +37,7 @@ In order to specify allowed Security Domain to Security Domain communication, we
 ### Validate
 Go to **_Multi-Cloud Transit -> Segmentation -> step 3_** and modify the _Shared_ security domain so it is connected to _Red_ and _Blue_. Also connect security domain _Onprem_ to _Red_.  
 
-![Lab Overview](../images/connection-policies.png)  
+![Lab Overview](images/connection-policies.png)  
 _Fig. Connection Policies_  
 
 ### Expected Results
@@ -58,7 +58,7 @@ Go to **_Multi-Cloud Transit -> Segmentation_** and on the tabs on the top of th
 | azure-transit   | azure-spoke1 | Blue |
 | gcp-transit   | MyOnPrem | Onprem |
 		
-![Lab Overview](../images/sec-domain-attachments.png)  
+![Lab Overview](images/sec-domain-attachments.png)  
 _Fig. Security Domain Attachments_  
 
 ### Expected Results
@@ -101,18 +101,18 @@ Another security feature the Aviatrix gateways provide, is FQDN filtering. A com
 
 FQDN Egress filtering is supported in multiple clouds, but we are going to configure it in AWS. AWS has the concept of public and private subnets. Aviatrix can apply FQDN egress filtering on both types of networks. Because our test instances are in the public subnet, we need to set up our environment to filter traffic for public instances.
 
-![Egress Diagram](../images/egress-diagram.png)  
+![Egress Diagram](images/egress-diagram.png)  
 _Fig. Egress Diagram_  
 
 ### Validate
 First, we are going to deploy a Public Filtering Subnet and a gateway which will do the actual FQDN egress filtering. Go to the **_Security -> Public Subnet_** page. Click **_Add New_**. Create the gateway according to the settings shown below. In order to select all routing tables, you can use shift or control.  
 
-![Egress Gateway Spoke1](../images/egress-gw1.png)  
+![Egress Gateway Spoke1](images/egress-gw1.png)  
 _Fig. Egress Gateway Spoke1_  
 
 We need to create another gateway for our second AWS spoke. Create it with the below settings.
 
-![Egress Gateway Spoke2](../images/egress-gw2.png)  
+![Egress Gateway Spoke2](images/egress-gw2.png)  
 _Fig. Egress Gateway Spoke2_  
 
 All egress traffic for the subnets that are attached to the selected route tables is now being routed through the filtering gateway. The controller took care of adjusting the routing for us.
@@ -129,12 +129,12 @@ We are going to create these tags and add the following domains. **Make sure to 
 | Spoke1   | www.microsoft.com | ICMP / Empty | Base Policy |
 | Spoke2   | www.ubuntu.com | ICMP / Empty | Base Policy |
 
-![Egress Tags](../images/egress-tags.png)  
+![Egress Tags](images/egress-tags.png)  
 _Fig. Egress Tag Config_  
 
 Next, we need to enable the tags:
 
-![Enable Egress Tags](../images/enable-egress-tags.png)  
+![Enable Egress Tags](images/enable-egress-tags.png)  
 _Fig. Enable Egress Tags_  
 
 These tags are not yet assigned to our gateways, so they are not yet filtering any traffic. Click **_Attach Gateway_**, and attach the tags as follows:

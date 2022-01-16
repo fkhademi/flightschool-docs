@@ -10,4 +10,4 @@ If you have not done so already, visit the following link to register for the [A
 * [ACE Infrastructure as Code](https://aviatrix.com/ace/)
 * [ACE Professional](https://aviatrix.com/ace/)
 
-![ACE](../images/ace.png) 
+![ACE](images/ace.png) 

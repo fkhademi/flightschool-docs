@@ -5,7 +5,7 @@ Lab time: ~20 minutes
 
 In this lab, we are going to explore our lab environment. The diagram below shows the current state of the lab environment. You will extend this environment during the exercises. The instructor will briefly explain the lab setup in the diagram. You can find a more complete and detailed diagram here.
 
-![Lab Overview](../images/lab-before.png)
+![Lab Overview](images/lab-before.png)
 _Figure: Lab Overview_
 
 ## Lab 1.1 - Aviatrix Controller
@@ -66,7 +66,7 @@ Along with the Aviatrix Controller, CoPilot is also deployed in the Shared Servi
 ### Validate
 You can log into CoPilot by clicking on the Single Sign-On button in the controller:  
 
-![CoPilot Link](../images/copilot-link.png)  
+![CoPilot Link](images/copilot-link.png)  
 _Figure: CoPilot Link_  
   
 You can familiarize yourselves with the different functions in CoPilot and after each lab, we can verify the results in CoPilot.  
@@ -79,5 +79,5 @@ Tip: Double click on the blue bubbles for more detail!
 ### Expected Results
 By clicking the CoPilot link in the Controller, you should be redirected to CoPilot and automatically signed in.  You should be able to view Topology and see the current Multi-Cloud Network topology.  Topology should look similar to this:  
 
-![Topology1](../images/topology1.png)  
+![Topology1](images/topology1.png)  
 _Figure: Initial Topology_  

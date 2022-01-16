@@ -5,7 +5,7 @@ Lab time: ~60 minutes
 
 In this lab, we will begin to build out the multi-cloud network.  We will create VPCs, deploy Aviatrix Transit and Spoke Gateways and create transit peerings to peer the different clouds together.  We will also connect an on-prem Data Center to the cloud.
 
-![Lab Overview](../images/lab-before.png)
+![Lab Overview](images/lab-before.png)
 _Fig. Lab Overview_
 
 ## Lab 2.1 - Deploy the AWS transit VPC
@@ -15,7 +15,7 @@ As the instructor explained in the first lab, we already have a transit VPC/VNET
 Go to **_Useful Tools -> Create a VPC_**. As you can see, there already are multiple VPC’s here. See if you can identify these VPC’s on the lab diagram.  
   
 Now click the add new button. Add a new VPC with the following settings:  
-![Create VPC](../images/create-vpc.png)  
+![Create VPC](images/create-vpc.png)  
 _Fig. Create Transit VPC_  
   
 For the VPC CIDR, replace “x” with your pod number. For example, if your pod number is 11. “x” should be replaced with 11, so the complete CIDR will become 10.11.40.0/23. Make sure Aviatrix Transit VPC is checked. The add VPC tool will automatically create all the required public and private subnets, IGW and routing tables.  
@@ -23,7 +23,7 @@ For the VPC CIDR, replace “x” with your pod number. For example, if your pod
 By default, it will use the assigned CIDR to add a private and public subnet to each availability zone in AWS. As of version 6.1, we can modify this behavior in the Advanced settings. Click add new again from the Create a VPC window and have a look at these settings. Try creating and deleting some VPC’s and VNET’s.
 ### Expected Results
 Our environment now looks like this:  
-![Topology](../images/topology2.png)  
+![Topology](images/topology2.png)  
 _Fig. Topology_  
 
 Check out the CoPilot Topology View.  Do you see the newly created Transit VPC?
@@ -35,17 +35,17 @@ In this exercise we are going to launch the Aviatrix transit gateway in the newl
 Browse to **_Multi-Cloud Transit -> Setup_** and launch a new transit gateway via step 1 with the settings below.  
 
 The VPC ID will differ from your environment, but we will select the VPC that we just created and named _aws-transit_. For the public subnet, use the one that has _Public-gateway_ in the name and is located in availability zone _a_. You can click on any of the info buttons if you want to understand what the other settings relate to. Click create when you are ready. This will take a few minutes, have a coffee.  
-![Create VPC](../images/create-transit-gw.png)  
+![Create VPC](images/create-transit-gw.png)  
 _Fig. Create Aviatrix Transit Gateway_  
   
 Once the gateway has been deployed, take a look at step 2 on this setup page. We are not deploying an HA solution in this workshop, but you can see how easy it is to deploy a second gateway and cluster them in an HA pair.  
 ### Expected Results
 Our environment now looks like this:  
-![Toplogy](../images/topology3.png)  
+![Toplogy](images/topology3.png)  
 _Fig. Topology with AWS Transit_  
 
 Check out CoPilot Topology.  Why is the AWS Transit cluster now visible?  
-![Toplogy](../images/copilot-trans-gw.png)  
+![Toplogy](images/copilot-trans-gw.png)  
 _Fig. Copilot Topology_  
 
 ## Lab 2.3 - Deploy the spoke gateways
@@ -54,7 +54,7 @@ Now that we have our transit set up, we will deploy the Aviatrix spoke gateways 
 
 ### Validate
 Create the spoke gateways for the existing VPC’s using the settings below by using **_step 4_** (scroll down) on the **_Multi-Cloud Transit -> Setup_** page.  
-![Toplogy](../images/create-spoke-gw.png)  
+![Toplogy](images/create-spoke-gw.png)  
 _Fig. Create Spoke Gateway_  
 
 Make sure you do this for all 3 AWS spoke VPC’s:  
@@ -64,11 +64,11 @@ Make sure you do this for all 3 AWS spoke VPC’s:
 
 ### Expected Results
 Our environment now looks like this:
-![Toplogy](../images/topology4.png)  
+![Toplogy](images/topology4.png)  
 _Fig. Topology with Spokes_  
 
 Check out CoPilot Topology.    
-![Toplogy](../images/copilot-spoke-gw.png)  
+![Toplogy](images/copilot-spoke-gw.png)  
 _Fig. Copilot Topology_
 
 ## Lab 2.4 - Attach Spoke Gateways to Aviatrix Transit GW
@@ -76,17 +76,17 @@ _Fig. Copilot Topology_
 We now have all of our gateways deployed. Next we need to set up connectivity between the spoke gateways and the transit gateway.
 ### Validate
 Go to **_step 6a_** on the **_Multi-Cloud Transit -> Setup_** page. Select the spoke gateway and transit gateway as shown below. **Repeat this for all 3 AWS spokes**.  
-![Toplogy](../images/attach-spoke.png)  
+![Toplogy](images/attach-spoke.png)  
 _Fig. Attach Spokes_
 ### Expected Results
 If you now go to the **_Multi-Cloud Transit -> List_** page, you can see the 3 transit gateways and each of the spoke gateways attached to them in the Spoke List. Validate that the spokes you just attached are showing up here.  
   
 Our environment now looks like this:
-![Toplogy](../images/topology5.png)  
+![Toplogy](images/topology5.png)  
 _Fig. Topology with Attached Spokes_  
 
 Check out CoPilot Topology.    
-![Toplogy](../images/copilot-spoke-attach.png)  
+![Toplogy](images/copilot-spoke-attach.png)  
 _Fig. Copilot Topology with Attached Spokes_
 
 ## Lab 2.5 - Test Connectivity Between AWS Spokes
@@ -147,13 +147,13 @@ ping gcp-srv1-priv.pod[x].aviatrixlab.com
 After adding the transit peerings and creating a full mesh, all resources should be reachable from each of the clouds.  
 
 Our lab environment now looks like this:
-![Toplogy](../images/topology6.png)  
+![Toplogy](images/topology6.png)  
 _Fig. Topology with Transit Peering_  
 
 Have a look at the Dashboard again. You should see all the connectivity on the map.
 
 Topology should show the newly created, beautiful Multi-Cloud full mesh, which should look like this:  
-![Toplogy](../images/copilot-transit-peering.png)  
+![Toplogy](images/copilot-transit-peering.png)  
 _Fig. Copilot Topology with Transit Peering_
 
 ## Lab 2.7 - Connection to the On-Prem Datacenter
@@ -189,7 +189,7 @@ ping onprem-cne-priv.aviatrixlab.com
 > Was the ping successful?
 
 Let’s go back to the **_Multi-Cloud Transit -> Approval -> gcp-transit_** to see which Routes we have learned.  
-![Toplogy](../images/route-approval.png)  
+![Toplogy](images/route-approval.png)  
 _Fig. Route Approval_  
 
 Select the appropriate Routes to approve (_10.254.0.0/20_), click _Approve_ and _Update_ and then re-run the connectivity tests. If it does not ping immediately, give it about a minute.
@@ -210,7 +210,7 @@ mtr onprem-cne-priv.aviatrixlab.com
 
 ### Expected Results
 After adding the connection to on-prem and approving the learned routes, the connectivity tests should be successful.  Our lab environment now looks like this:  
-![Toplogy](../images/topology7.png)  
+![Toplogy](images/topology7.png)  
 _Fig. Topology with On-Prem Connectivity_
 
 ## Lab 2.8 - Infrastructure as Code (Bonus Lab)
