@@ -169,18 +169,48 @@ Now let’s add the On-Premise Datacenter connection.  Navigate to **_Multi-Clou
 
 |  |  |
 | ------ | ----------- |
-| Transit VPC Name   | gcp-transit |
-| Connection Name | MyOnPrem |
-| Aviatrix Transit Gateway BGP ASN | 650[pod#] _For Pods 1-9, pad the pod# with an additional 0 (ie. 65004)_ |
-| Algorithms | Leave unchecked to select default values |
-| BGP Remote AS Number | 65000 |
-| Remote Gateway | <ip-address> _Please resolve the FQDN onprem-cne-gw.aviatrixlab.com_ |
-| Pre-shared Key | mapleleafs |
-| Local Tunnel IP | 169.254.[pod#].2/30 |
-| Remote Tunnel IP | 169.254.[pod#].1/30 |
+| *Transit VPC Name* | gcp-transit |
+| *Connection Name* | MyOnPrem |
+| *Aviatrix Transit Gateway BGP ASN* | 650[pod#] _For Pods 1-9, pad the pod# with an additional 0 (ie. 65004)_ |
+| *Algorithms* | Leave unchecked to select default values |
+| *BGP Remote AS Number* | 65000 |
+| *Remote Gateway* | <ip-address> _Please resolve the FQDN onprem-cne-gw.aviatrixlab.com_ |
+| *Pre-shared Key* | mapleleafs |
+| *Local Tunnel IP* | 169.254.[pod#].2/30 |
+| *Remote Tunnel IP* | 169.254.[pod#].1/30 |
+
+After 1-2 minutes, under the Site2Cloud menu option, you should see that the connection to On-Prem is green.  In order to test connectivity between cloud and on-prem, a test VM is available with the FQDN onprem-cne-priv.aviatrixlab.com.
+
+* Connect into _GCP-SRV1_
+* Run the following commands:
+```
+ping onprem-cne-priv.aviatrixlab.com
+```
+> Was the ping successful?
+Let’s go back to the **_Multi-Cloud Transit -> Approval -> gcp-transit_** to see which Routes we have learned.  
+![Toplogy](../images/route-approval.png)  
+_Fig. Route Approval_  
+
+Select the appropriate Routes to approve (_10.254.0.0/20_), click _Approve_ and _Update_ and then re-run the connectivity tests. If it does not ping immediately, give it about a minute.
+
+* Connect into _AWS-SRV1_
+* Run the following commands:
+```
+ping onprem-cne-priv.aviatrixlab.com
+mtr onprem-cne-priv.aviatrixlab.com
+```
+* Connect into _GCP-SRV1_
+* Run the following commands:
+```
+ping onprem-cne-priv.aviatrixlab.com
+mtr onprem-cne-priv.aviatrixlab.com
+```
+> Was the ping successful?
 
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+After adding the connection to on-prem and approving the learned routes, the connectivity tests should be successful.  Our lab environment now looks like this:  
+![Toplogy](../images/topology7.png)  
+_Fig. Topology with On-Prem Connectivity_
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
