@@ -169,15 +169,15 @@ Now let’s add the On-Premise Datacenter connection.  Navigate to **_Multi-Clou
 
 |  |  |
 | ------ | ----------- |
-| *Transit VPC Name* | gcp-transit |
-| *Connection Name* | MyOnPrem |
-| *Aviatrix Transit Gateway BGP ASN* | 650[pod#] _For Pods 1-9, pad the pod# with an additional 0 (ie. 65004)_ |
-| *Algorithms* | Leave unchecked to select default values |
-| *BGP Remote AS Number* | 65000 |
-| *Remote Gateway* | <ip-address> _Please resolve the FQDN onprem-cne-gw.aviatrixlab.com_ |
-| *Pre-shared Key* | mapleleafs |
-| *Local Tunnel IP* | 169.254.[pod#].2/30 |
-| *Remote Tunnel IP* | 169.254.[pod#].1/30 |
+| **Transit VPC Name** | gcp-transit |
+| **Connection Name** | MyOnPrem |
+| **Aviatrix Transit Gateway BGP ASN** | 650[pod#] _For Pods 1-9, pad the pod# with an additional 0 (ie. 65004)_ |
+| **Algorithms** | Leave unchecked to select default values |
+| **BGP Remote AS Number** | 65000 |
+| **Remote Gateway** | <ip-address> _Please resolve the FQDN onprem-cne-gw.aviatrixlab.com_ |
+| **Pre-shared Key** | mapleleafs |
+| **Local Tunnel IP** | 169.254.[pod#].2/30 |
+| **Remote Tunnel IP** | 169.254.[pod#].1/30 |
 
 After 1-2 minutes, under the Site2Cloud menu option, you should see that the connection to On-Prem is green.  In order to test connectivity between cloud and on-prem, a test VM is available with the FQDN onprem-cne-priv.aviatrixlab.com.
 
@@ -187,6 +187,7 @@ After 1-2 minutes, under the Site2Cloud menu option, you should see that the con
 ping onprem-cne-priv.aviatrixlab.com
 ```
 > Was the ping successful?
+
 Let’s go back to the **_Multi-Cloud Transit -> Approval -> gcp-transit_** to see which Routes we have learned.  
 ![Toplogy](../images/route-approval.png)  
 _Fig. Route Approval_  
