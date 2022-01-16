@@ -125,14 +125,6 @@ After enabling Connected Transit, the spoke to spoke communication tests should 
 
 ## Lab 2.6 - Set Up the Multi-Cloud Transit Peering
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
-### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
-### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
-
-## Lab 2.7 - Exploring the Aviatrix Gateways
-### Description
 Now that we have built the AWS environment, let’s connect it to the Azure and GCP environment.
 ### Validate
 Have a look at **_Multi-Cloud Transit -> Transit Peering_**. As you can see, the _Azure_ and _GCP_ gateways are already peered together. You have validated this connectivity to work already in exercise 1.3.  
@@ -163,6 +155,32 @@ Have a look at the Dashboard again. You should see all the connectivity on the m
 Topology should show the newly created, beautiful Multi-Cloud full mesh, which should look like this:  
 ![Toplogy](../images/copilot-transit-peering.png)  
 _Fig. Copilot Topology with Transit Peering_
+
+## Lab 2.7 - Connection to the On-Prem Datacenter
+### Description
+At this point, all cloud resources should be connected and able to communicate with one another.  The only part that is missing is the connection to On-Prem.
+### Validate
+In order to connect our Multi-Cloud environment to On-Prem, we will use the **_Multi-Cloud Transit_** workflow.  This allows us to create a secure link between Cloud and On-Prem, and to enable dynamic routing (BGP).  
+
+Before adding On-Prem to our Multi-Cloud environment, let’s enable Route Approval.  Enabling Route Approval is a best practice as one can control the routes learned from On-Premise before distributing them in the cloud.  
+To enable Route Approval, navigate to **_Multi-Cloud Transit -> Approval -> Select gcp-transit_** and switch the knob from **Disabled** to **Enabled**.  
+
+Now let’s add the On-Premise Datacenter connection.  Navigate to **_Multi-Cloud Transit -> Setup -> Step 3_**.  Select External Device, select BGP and enter the following information:  
+
+|  |  |
+| ------ | ----------- |
+| Transit VPC Name   | gcp-transit |
+| Connection Name | MyOnPrem |
+| Aviatrix Transit Gateway BGP ASN | 650[pod#] _For Pods 1-9, pad the pod# with an additional 0 (ie. 65004)_ |
+| Algorithms | Leave unchecked to select default values |
+| BGP Remote AS Number | 65000 |
+| Remote Gateway | <ip-address> _Please resolve the FQDN onprem-cne-gw.aviatrixlab.com_ |
+| Pre-shared Key | mapleleafs |
+| Local Tunnel IP | 169.254.[pod#].2/30 |
+| Remote Tunnel IP | 169.254.[pod#].1/30 |
+
+### Expected Results
+You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
