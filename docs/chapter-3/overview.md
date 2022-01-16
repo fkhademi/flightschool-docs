@@ -10,7 +10,7 @@ In this lab, we are going to explore some of the security features that Aviatrix
 Until now we have set up a relatively flat any to any network.  Now let's see how we can segment our network by using Aviatrix Multi-Cloud Network Segmentation.
 ### Validate
 Go to **_Multi-Cloud Transit -> Segmentation_**. First we need to enable segmentation for all 3 transit gateways.  
-![Lab Overview](../images/enable-segmentation.png)
+![Lab Overview](../images/enable-segmentation.png)  
 _Fig. Enable Segmentation_   
 
 Select the gateway and click enable. **Make sure to do this for all 3 transit gateways**.
@@ -25,7 +25,7 @@ Now we are going to create some security domains, which we can use for segmentat
 ### Validate
 Go to **_Multi-Cloud Transit -> Segmentation -> step 2_** , create the following security domains: _Red_, _Blue_, _Shared_ and _Onprem_.  
 
-![Lab Overview](../images/sec-domains.png)
+![Lab Overview](../images/sec-domains.png)  
 _Fig. Create Security Domains_  
 
 ### Expected Results
@@ -37,7 +37,7 @@ In order to specify allowed Security Domain to Security Domain communication, we
 ### Validate
 Go to **_Multi-Cloud Transit -> Segmentation -> step 3_** and modify the _Shared_ security domain so it is connected to _Red_ and _Blue_. Also connect security domain _Onprem_ to _Red_.  
 
-![Lab Overview](../images/connection-policies.png)
+![Lab Overview](../images/connection-policies.png)  
 _Fig. Connection Policies_  
 
 ### Expected Results
@@ -58,7 +58,7 @@ Go to **_Multi-Cloud Transit -> Segmentation_** and on the tabs on the top of th
 | azure-transit   | azure-spoke1 | Blue |
 | gcp-transit   | MyOnPrem | Onprem |
 		
-![Lab Overview](../images/sec-domain-attachments.png)
+![Lab Overview](../images/sec-domain-attachments.png)  
 _Fig. Security Domain Attachments_  
 
 ### Expected Results
