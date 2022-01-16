@@ -123,7 +123,7 @@ mtr aws-srv2-priv.pod[x].aviatrixlab.com
 ### Expected Results
 After enabling Connected Transit, the spoke to spoke communication tests should now be successful and spoke routes should be propagated.
 
-## Lab 1.4 - Exploring the Aviatrix Gateways
+## Lab 2.6 - Set Up the Multi-Cloud Transit Peering
 ### Description
 As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
 ### Validate
@@ -133,11 +133,36 @@ You should be able to view the VPC / VNET and Gateway Route Tables for both the 
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
-As you can see from the lab diagram, there are already some Aviatrix gateways deployed. Let’s see where we can find them in the controller.
+Now that we have built the AWS environment, let’s connect it to the Azure and GCP environment.
 ### Validate
-Go to **_Multi-Cloud Transit -> List_**. As you can see, this is where the existing transit gateways are listed. Look at the following fields: Name, VPC CIDR, Spoke List and Transit Peering. Try to derive the existing topology as seen on the lab diagram from this information.  
+Have a look at **_Multi-Cloud Transit -> Transit Peering_**. As you can see, the _Azure_ and _GCP_ gateways are already peered together. You have validated this connectivity to work already in exercise 1.3.  
+
+Create a new transit peering on this page, by clicking add new. Select the _AWS_ and the _Azure_ gateway (_azure-transit_) and click OK. Wait for the connection to establish.  
+
+* Try to ping the server in Azure and GCP from one of the AWS instances
+```
+ping gcp-srv1-priv.pod[x].aviatrixlab.com
+ping azure-srv1-priv.pod[x].aviatrixlab.com
+```
+> Were you able to ping aws-srv2-priv and shared-priv?
+
+Now let’s add the peering between _AWS_ and _GCP_ (_gcp-transit_) in the same way.
+```
+ping gcp-srv1-priv.pod[x].aviatrixlab.com
+```
+
 ### Expected Results
-You should be able to view the VPC / VNET and Gateway Route Tables for both the Transit Gateways and Spoke Gateways.
+After adding the transit peerings and creating a full mesh, all resources should be reachable from each of the clouds.  
+
+Our lab environment now looks like this:
+![Toplogy](../images/topology6.png)  
+_Fig. Topology with Transit Peering_  
+
+Have a look at the Dashboard again. You should see all the connectivity on the map.
+
+Topology should show the newly created, beautiful Multi-Cloud full mesh, which should look like this:  
+![Toplogy](../images/copilot-transit-peering.png)  
+_Fig. Copilot Topology with Transit Peering_
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
