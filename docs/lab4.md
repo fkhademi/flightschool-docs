@@ -78,3 +78,19 @@ _Fig. BGP Commands_
 
 ### Expected Results
 Use the above commands to troubleshoot IPSEC tunnels and BGP connections.
+
+## Lab 4.5 - FlowIQ
+### Description
+All of the Aviatrix Gateways are configured to stream rich netflow data to CoPilot.  This means that each flow and it's details that goes across your cloud network is visible in CoPilot.  CoPilot offers powerful searching using simple or complex filters, shows top talkers and much more.
+### Validate
+Login to CoPilot and navigate to **_FlowIQ_**.  In the **Overview** tab, let's create a filter to show all ICMP traffic across the network in the past 24 hours.  
+
+* Click the button **_Last Day_** and then **_Add Rule_** under **_Edit Filters_**
+* In the _Select Field_ dropdown, select _Protocol Name_, _is equal to_, and enter **ICMP** in that field
+* Click **Apply Changes**
+
+### Expected Results
+Find any flow that goes across your cloud network.  In this example we are looking at all pings across the cloud network over the last 24 hours, but you can create much more complex filters.
+
+![FlowIQ](../images/flowiq.png)  
+_Fig. FlowIQ_ 
