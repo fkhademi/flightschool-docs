@@ -134,7 +134,7 @@ _Fig. Egress Tag Config_
 
 Next, we need to enable the tags:
 
-![Egress Tags](../images/enable-egress-tags.png)  
+![Enable Egress Tags](../images/enable-egress-tags.png)  
 _Fig. Enable Egress Tags_  
 
 These tags are not yet assigned to our gateways, so they are not yet filtering any traffic. Click **_Attach Gateway_**, and attach the tags as follows:
