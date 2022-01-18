@@ -222,7 +222,7 @@ https://registry.terraform.io/providers/AviatrixSystems/aviatrix/latest/docs
 We have prepared some Terraform code for you, which you will explore and deploy.
 
 * Connect into AWS-SRV1
-* Download the prepared Terraform environment (Warning, copy/paste of the command might lose some characters, if you get an error or request for username and password, make sure the URL is correct. Often one of the hyphens (-) is dropped.)
+* Download the prepared Terraform environment  
 ```
 git clone --branch v0.0.2 https://gitlab.com/dhagens-aviatrix-public/misc/cne-terraform-lab.git
 cd cne-terraform-lab
