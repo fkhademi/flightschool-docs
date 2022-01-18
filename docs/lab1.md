@@ -14,7 +14,7 @@ Navigate and login to the Aviatrix Controller.
 ### Validate
 Open your browser and navigate to:
 
-**URL:** ```https://web.pod[x].aviatrixlab.com```  
+**URL:** ```https://ctrl.pod[x].aviatrixlab.com```  
 **User:** ```admin```  
 **Password:** ```Password123!```
 ### Expected Results
