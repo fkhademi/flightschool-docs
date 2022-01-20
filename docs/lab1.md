@@ -36,7 +36,7 @@ In order execute the connectivity tests, we need to log on to the test instances
 
 **URL:** ```https://web.pod[x].aviatrixlab.com```  
 **User:** ```admin```  
-**Password:** ```Password123!```  
+**Password:** ```Password123```  
 
 * _(replace [x] with your pod ID)_
 * _If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device._
