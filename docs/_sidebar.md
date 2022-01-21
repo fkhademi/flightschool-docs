@@ -4,6 +4,7 @@
 - [Lab 2 - Multi-Cloud Transit](lab2.md)
 - [Lab 3 - Security Features](lab3.md)
 - [Lab 4 - Visbility & Operations](lab4.md)
+- [Appendix](appendix.md)
 - [Summary](summary.md)
 
 **PROJECT INFO**  
