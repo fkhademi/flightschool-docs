@@ -17,6 +17,9 @@ Open your browser and navigate to:
 **URL:** ```https://ctrl.pod[x].aviatrixlab.com```  
 **User:** ```admin```  
 **Password:** ```Password123!```
+
+* _(replace **[x]** with your pod ID)_
+
 ### Expected Results
 Explore the Dashboard. As you can see, there are already gateways deployed in different CSP environments. Do they seem connected to each other? Do you think this connection is working? Why do you think so?
 
