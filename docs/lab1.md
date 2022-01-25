@@ -44,16 +44,16 @@ In order execute the connectivity tests, we need to log on to the test instances
 * _(replace [x] with your pod ID)_
 * _If you want to use copy/paste in this Guacamole web console, use CTRL+ALT+SHIFT on a Windows device or CTRL+CMD+SHIFT on a MacOS device._
 
-1- Connect into **AWS-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
+1- Connect into **GCP-SRV1** from the *ALL CONNECTIONS* pane. (Tip: use right-click open in new tab)  
 2- Run the following commands:
 ```
 ping azure-srv1-priv.pod[x].aviatrixlab.com  
-ping gcp-srv1-priv.pod[x].aviatrixlab.com  
+ping aws-srv1-priv.pod[x].aviatrixlab.com  
 ping aws-srv2-priv.pod[x].aviatrixlab.com  
 ping shared-priv.pod[x].aviatrixlab.com
 ```  
 ### Expected Results
-None of the ping tests will be successful.  Look at the Diagram in the Lab 1 Overview and you will see that only Azure and GCP are connected so far, but AWS is not connected, therefore the connectivity tests from AWS Spoke 1 will not work.
+Not all of the ping tests will be successful.  Look at the Diagram in the Lab 1 Overview and you will see that only Azure and GCP are connected so far, but AWS is not connected, therefore the connectivity tests from GCP to AWS will not work.
 
 ## Lab 1.4 - Exploring the Aviatrix Gateways
 ### Description
