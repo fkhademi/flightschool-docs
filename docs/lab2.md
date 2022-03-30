@@ -136,7 +136,7 @@ Create a new transit peering on this page, by clicking add new. Select the _AWS_
 ping gcp-srv1-priv.pod[x].aviatrixlab.com
 ping azure-srv1-priv.pod[x].aviatrixlab.com
 ```
-> Were you able to ping aws-srv2-priv and shared-priv?
+> Were you able to ping gcp-srv1-priv?
 
 Now let’s add the peering between _AWS_ and _GCP_ (_gcp-transit_) in the same way.
 ```
